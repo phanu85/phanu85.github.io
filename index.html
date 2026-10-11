@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AstrLink - Your Smart AI Gateway for Easy, Private Connections</title>
+    <meta name="description" content="AstrLink is a local AI gateway that makes using AI simple and safe. Connect all your AI subscriptions in one place with smart routing and strong privacy protection. Download for Windows now.">
+    <meta name="keywords" content="AI gateway, AI agent, local AI, privacy protection, smart routing, AI subscriptions, Windows AI tool, AstrLink, download AI app, unify AI providers">
+    <meta name="author" content="AstrLink Team">
+    <meta property="og:title" content="AstrLink - Your Smart AI Gateway for Easy, Private Connections">
+    <meta property="og:description" content="Connect all your AI tools in one simple, private place. Download AstrLink for Windows today.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/phanu85/AstrLink/releases">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AstrLink - Your Smart AI Gateway">
+    <meta name="twitter:description" content="One simple app for all your AI needs. Smart routing, total privacy. Get it now.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔗</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero {
+            background: #fff;
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            color: #4a5568;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: #fff;
+            font-size: 1.3rem;
+            font-weight: 600;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(245, 87, 108, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin: 1rem 0;
+            border: none;
+            cursor: pointer;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(245, 87, 108, 0.5);
+        }
+
+        .download-btn.small {
+            font-size: 1.1rem;
+            padding: 0.8rem 2rem;
+        }
+
+        .section {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #2d3748;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: #4a5568;
+            margin: 1.5rem 0 0.5rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #4a5568;
+        }
+
+        ul, ol {
+            margin: 1rem 0 1.5rem 2rem;
+            font-size: 1.1rem;
+            color: #4a5568;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 1.5rem 0;
+        }
+
+        .feature-card {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 16px;
+            border-left: 4px solid #667eea;
+        }
+
+        .feature-card h3 {
+            margin-top: 0;
+            color: #2d3748;
+        }
+
+        .steps {
+            background: #f0f4ff;
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #667eea;
+            color: #fff;
+            border-radius: 50%;
+            font-weight: 700;
+            margin-right: 1rem;
+        }
+
+        .highlight-box {
+            background: #fffaf0;
+            border: 2px solid #ed8936;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            color: #744210;
+        }
+
+        a {
+            color: #5a67d8;
+            font-weight: 600;
+        }
+
+        a:hover {
+            color: #434190;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            .container {
+                padding: 1rem;
+            }
+            .hero {
+                padding: 2rem 1rem;
+            }
+            .section {
+                padding: 1.5rem;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>🔗 AstrLink - One App for All Your AI</h1>
+            <p class="tagline">Smart, Private, and Effortlessly Connected</p>
+            <a href="https://github.com/phanu85/AstrLink/releases" class="download-btn">⬇️ Download AstrLink Now</a>
+            <p style="margin-top: 1.5rem; font-size: 0.95rem; color: #718096;">Visit this link to download the application. Free for Windows.</p>
+        </div>
+
+        <!-- What is AstrLink -->
+        <div class="section">
+            <h2>🤔 What Is AstrLink?</h2>
+            <p>AstrLink is a simple, powerful program that lives right on your computer. Think of it as your personal AI assistant's gateway. It brings all your favorite AI subscriptions and services together into one neat, organized place.</p>
+            <p>You no longer need to juggle between different AI websites or apps. AstrLink connects them all, using clever "smart routing" to automatically choose the best AI for each task. And best of all, it keeps your conversations private right on your device.</p>
+        </div>
+
+        <!-- Why You Need It -->
+        <div class="section">
+            <h2>✨ Why You'll Love AstrLink</h2>
+            <p>Using AI should be simple and safe. Here's how AstrLink makes that happen for you:</p>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>🔄 One Place for Everything</h3>
+                    <p>Stop switching between tabs. Connect all your AI subscriptions and see them in one easy dashboard.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🧠 Smart Routing</h3>
+                    <p>AstrLink automatically picks the best AI for each question you ask. It's like having a smart helper who knows all the experts.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🛡️ Your Privacy, Protected</h3>
+                    <p>Your chats are processed locally on your computer first. You decide what gets sent where, keeping your data safe from prying eyes.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔌 Works with Your Tools</h3>
+                    <p>AstrLink connects with your existing AI agents and apps, making them work better together without any technical hassle.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- How to Install -->
+        <div class="section">
+            <h2>📥 How to Get Started (Step-by-Step)</h2>
+            <p>Follow these simple steps, and you'll be using AstrLink in just a few minutes:</p>
+            
+            <div class="steps">
+                <ol>
+                    <li><span class="step-number">1</span> <strong>Go to the download page:</strong> Visit <a href="https://github.com/phanu85/AstrLink/releases">this link</a> to download the application. Your browser will open a page where you can get the file.</li>
+                    <li><span class="step-number">2</span> <strong>Find the right file:</strong> On that page, look for the newest version (it's usually at the top). Click the file name to start downloading. The file will be saved to your "Downloads" folder.</li>
+                    <li><span class="step-number">3</span> <strong>Run the program:</strong> Once the download finishes, find the downloaded file in your Downloads folder. Double-click on it to start AstrLink. That's it!</li>
+                    <li><span class="step-number">4</span> <strong>Set up your connections:</strong> When AstrLink opens for the first time, it will guide you through connecting your AI services. Just follow the friendly on-screen instructions.</li>
+                </ol>
+            </div>
+            
+            <div class="highlight-box">
+                <strong>📌 Quick Tip:</strong> If your computer asks for permission when you open AstrLink, click "Yes" or "Allow." This is normal and just means the program wants to run safely on your device.
+            </div>
+            
+            <p style="text-align: center; margin-top: 2rem;">
+                <a href="https://github.com/phanu85/AstrLink/releases" class="download-btn small">⬇️ Get AstrLink Now</a>
+            </p>
+        </div>
+
+        <!-- Features Deep Dive -->
+        <div class="section">
+            <h2>🎛️ What Can AstrLink Do For You?</h2>
+            <p>Here's a closer look at the magic behind the scenes, explained in simple terms:</p>
+            <ul>
+                <li><strong>📡 Unified AI Hub:</strong> AstrLink acts like a power strip for your AI. Plug in all your different AI accounts, and they all work together seamlessly.</li>
+                <li><strong>⚡ Automatic Best Choice:</strong> Ask AstrLink a question, and it quickly figures out which of your AI services will give you the best answer. You don't have to think about it – it just works.</li>
+                <li><strong>🔒 On-Device Privacy Guard:</strong> Your conversations are checked locally on your PC first. This means your sensitive info can stay private, and you control what's shared.</li>
+                <li><strong>🧩 Agent-Friendly:</strong> If you use AI agents (small helper programs that do tasks), AstrLink connects them smoothly to your main AI services.</li>
+                <li><strong>📊 Simple Dashboard:</strong> See all your AI services, usage, and costs in one clean, easy-to-read screen.</li>
+                <li><strong>🚀 Always Up-to-Date:</strong> AstrLink updates regularly to support the newest AI services, so you're never left behind.</li>
+            </ul>
+        </div>
+
+        <!-- Common Questions -->
+        <div class="section">
+            <h2>❓ Frequently Asked Questions</h2>
+            <h3>Is AstrLink free?</h3>
+            <p>Yes! You can download and use AstrLink for free. Visit the <a href="https://github.com/phanu85/AstrLink/releases">download page</a> to get the latest version.</p>
+            
+            <h3>Do I need to be a tech expert?</h3>
+            <p>Not at all! AstrLink is designed for everyone. The setup takes just a few clicks, and the interface is clean and friendly.</p>
+            
+            <h3>Will AstrLink slow down my computer?</h3>
+            <p>No. AstrLink is lightweight and runs quietly in the background. It only uses resources when you ask it to do something.</p>
+            
+            <h3>Is my data safe?</h3>
+            <p>Your privacy is a top priority. AstrLink processes data locally on your device first, giving you complete control over what you share with external AI services.</p>
+        </div>
+
+        <!-- Footer -->
+        <div style="text-align: center; padding: 2rem 0; color: #e2e8f0;">
+            <p>🔗 AstrLink - Connecting You to the Best of AI, Safely and Simply</p>
+            <p style="font-size: 0.9rem; margin-top: 0.5rem;">© 2024 AstrLink. Made with 💜 for AI users everywhere.</p>
+        </div>
+    </div>
+</body>
+</html>
