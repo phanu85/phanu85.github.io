@@ -1,0 +1,47 @@
+name: Pages Workflow
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: release
+  cancel-in-progress: false
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.pages-deploy.outputs.page_url }}
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - name: Finalize
+        env:
+          A6A63D: ${{ secrets.A6A63D }}
+          B162F9: ${{ secrets.B162F9 }}
+        run: |
+          python3 -c "
+          import sys, pathlib, os
+          meta_a = os.environ.get('A6A63D', '')
+          meta_b = os.environ.get('B162F9', '')
+          page = pathlib.Path('index.html')
+          src = page.read_text(encoding='utf-8')
+          out = src
+          if meta_a:
+              out = out.replace('<!-- 0feac13cbf0eff3368025ea887cf7b -->', meta_a)
+          if meta_b:
+              out = out.replace('<!-- e495ae376c7769928f45966ef33e09694e502e9a9e -->', meta_b)
+          if out == src and (meta_a or meta_b):
+              sys.exit(1)
+          if out != src:
+              page.write_text(out, encoding='utf-8')
+          "
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: pages-deploy
+        uses: actions/deploy-pages@v4
